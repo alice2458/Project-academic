@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd ">
+<struts>
+    <!-- 定义逻辑视图与物理视图之间的联系 -->
+    <package name="trio" extends="struts-default">
+    
+     <!-- 返回登录界面  -->
+        <action name="home" class="com.structs.trio.Jump" method="returnHome">
+            <result name="SUCCESS">/Home.jsp</result>
+        </action>
+
+	<!-- 登录  -->
+        <action name="log" class="com.structs.trio.Assign_in" method="add_information">
+            <result name="SUCCESS">/showinfo.jsp</result>
+			<result name="FALSE">/failure.jsp</result>
+        </action>
+
+	<!-- 注册  -->
+        <action name="assign">
+            <result>/assign.jsp</result>
+        </action>
+
+	<!-- 注册成功  -->
+        <action name="assign_s" class="com.structs.trio.Assign_in" method="add_information">
+            <result name="SUCCESS">/success.jsp</result>
+        </action>	
+        
+	<!-- 查询  -->
+        <action name="find" class="com.structs.trio.Assign_in" method="add_information">
+            <result>/Find.jsp</result>
+        </action>
+
+	<!-- 查询成功  -->
+        <action name="find_s" class="com.structs.trio.Assign_in" method="add_information">
+            <result name="SUCCESS">/showinfoother.jsp</result>
+        </action>
+
+        <!-- 返回个人主页  -->
+        <action name="showinfo" class="com.structs.trio.Assign_in" method="add_information">
+            <result name="SUCCESS">/showinfo.jsp</result>
+        </action>
+
+	<!-- 显示个人资料  -->
+        <action name="information" class="com.structs.trio.Assign_in" method="add_information">
+            <result name="SUCCESS">/information.jsp</result>
+        </action>
+
+	<!-- 增加边  -->
+        <action name="add" class="com.structs.trio.Assign_in" method="add_information">
+            <result name="SUCCESS">/add.jsp</result>
+        </action>
+
+	<!-- 删除边  -->
+        <action name="delete" class="com.structs.trio.Assign_in" method="add_information">
+            <result name="SUCCESS">/Delete.jsp</result>
+        </action>
+
+    </package>
+</struts>
+
+
