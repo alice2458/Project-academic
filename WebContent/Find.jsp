@@ -18,5 +18,8 @@
 	<div class="an">
 		<input type="submit" value="确认" />
 	</div>
+	<div class="bu">
+		<a href=home><button type="button">返回到个人主页</button></a>
+	</div>
 </body>
 </html>

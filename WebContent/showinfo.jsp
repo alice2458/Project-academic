@@ -11,10 +11,10 @@
 	<h1>我的个人师承树</h1>
 	</br>
 	<div class="bu">
-		<a href=home><button type="button">查询</button></a>
-		<a href=home><button type="button">个人资料</button></a>
-		<a href=home><button type="button">增加边</button></a>
-		<a href=home><button type="button">删除边</button></a>
+		<a href=find><button type="button">查询</button></a>
+		<a href=information><button type="button">个人资料</button></a>
+		<a href=add><button type="button">增加边</button></a>
+		<a href=delete><button type="button">删除边</button></a>
 	</div>
 	</br>
 </body>

@@ -10,7 +10,7 @@
 <body>
 	<h1>请输入您的个人信息：</h1>
 	<div id="center">
-		<form action="addBook" method="get">
+		 <form action="assign_s" method="get">
 			<span class="kuan"><input name="name" type="text"
 				placeholder=" 请输入姓名" size="16" required /></br> </br></span>
 			<div class="kuan">
@@ -55,7 +55,7 @@
 	</br>
 	</br>
 	<div class="bu">
-		<a href=home><button type="button">返回到主页</button></a>
+		<a href=home><button type="button">返回到登录主页</button></a>
 	</div>
 </body>
 </html>

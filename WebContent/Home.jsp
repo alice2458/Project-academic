@@ -8,9 +8,9 @@
 <link rel="stylesheet" href="Home.css" />
 </head>
 <body {background-image: url(Academic Relationship Tree\WebContent\BG.jpg);}>
-
 	</br>
 	<div id="center")>
+		<form action="log" method="get">
 		<div class="txt1">
 			<h1>欢迎使用学术关系管理系统！</h1>
 		</div>
@@ -30,10 +30,10 @@
 		</div>
 		<div class="an">
 			<input type="submit" value="登录" />
-			<input type="submit" value="注册" />
+			<a href=assign><button type="button">注册</button></a>
 		</div>
+		</form>
 	</div>
 	</br>
-	
 </body>
 </html>
