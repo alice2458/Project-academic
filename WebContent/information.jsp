@@ -9,7 +9,7 @@
 </head>
 <body>
 	 <div class="bu">
-		<a href=home><button type="button">返回到个人主页</button></a>
+		<a href=showinfo><button type="button">返回到个人主页</button></a>
 	</div>
 </body>
 </html>

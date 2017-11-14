@@ -30,9 +30,11 @@
 		</div>
 		<div class="an">
 			<input type="submit" value="登录" />
-			<a href=assign><button type="button">注册</button></a>
 		</div>
 		</form>
+		<div class="bu">
+			<a href=assign><button type="button">注册</button></a>
+		</div>
 	</div>
 	</br>
 </body>
