@@ -88,13 +88,19 @@ public class Assign_in {
 	
 	public String add_information() 
 	{
-		String sql_info = "insert into information values(" + "\"" + getName()  + "\"" + "," + "\"" + getSex() + "\"" + "," + getAge() + ","
+		String sql_info1 = "insert into information values(" + "\"" + getName()  + "\"" + "," + "\"" + getSex() + "\"" + "," + getAge() + ","
 				+ "\"" + getPhone() + "\"" + "," + "\"" + getEmail()  + "\"" + "," + "\"" + getGraduated_school() + "\"" + "," + "\"" + getCompany()  + "\"" + "," + "\"" + getCSDN_add() +
 				"\"" + "," + "\"" + getPassword() + "\"" + ")";
 		MySQLConnecter mc = new MySQLConnecter();
-		int status = mc.update(sql_info);
+		int status = mc.update(sql_info1);
+		String sql_addTeacher = "create table " + getName() + "的老师" + "(teacher varchar(20), teacher_start_time date,"
+				+ "teacher_over_time date);";
+		String sql_addStudent = "create table " + getName() + "的学生" + "(student varchar(20), student_start_time date,"
+				+ "student_over_time date);";
+		mc.update(sql_addTeacher);
+		mc.update(sql_addStudent);
 		if (status == 0)
 			return "FALSE";
 		return "SUCCESS";
-	}                                           
+	}
 }

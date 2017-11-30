@@ -14,6 +14,7 @@
 		<a href=information><button type="button">个人资料</button></a>
 		<a href=add><button type="button">增加边</button></a>
 		<a href=delete><button type="button">删除边</button></a>
+		<a href=delete><button type="button">修改边</button></a>
 	</div>
 	<div class="bu">
 		<a href=home><button type="button">退出登录</button></a>
