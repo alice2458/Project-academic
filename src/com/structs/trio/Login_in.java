@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class Login_in 
 {
-	private String name;
+	public static String name;
 	private String password;
 	private ArrayList<String> list = null;
 

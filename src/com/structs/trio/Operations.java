@@ -15,6 +15,11 @@ public class Operations
 	private String student_start_time;
 	private String student_over_time;
 	private String project;
+	private ArrayList<String> list = null;
+
+	public ArrayList<String> getList() {
+		return this.list;
+	}
 	
 	public String get_project() {
 		return this.project;
@@ -82,14 +87,27 @@ public class Operations
 
 	public String AddTeacher() 
 	{
-		String sql = "insert into " + get_owner() + "的老师" + "values(" + 
+		String sql = "insert into " + Login_in.name + "的老师 " + "values(" + 
 				"\"" + get_teacher()  + "\"" + "," + get_teacher_st() + ","
-				+ get_teacher_ot() + "\"" + get_project()  + "\"" + ");";
+				+ get_teacher_ot() + "," + "\"" + get_project()  + "\"" + ");";
 		MySQLConnecter newc = new MySQLConnecter();
-		System.out.println(sql);
 		int status = newc.update(sql);
 		if (status == 0)
 			return "FALSE";
+		
+		String sql2 = "select * from information where Name=\"" + get_teacher() + "\"";
+		System.out.println(sql2);
+		ArrayList<Map<String, String>> result2 = newc.select(sql2, "information");
+		
+		if (result2.size() != 0) {
+			String sql4 = "insert into " + get_teacher() + "的学生" + "values(" + 
+					"\"" + get_owner()  + "\"" + "," + get_teacher_st() + ","
+					+ get_teacher_ot() + "\"" + get_project()  + "\"" + ");";
+			System.out.println(sql);
+			int num = newc.update(sql4);
+			if (num == 0)
+				return"FALSE";
+		}
 		return "SUCCESS";
 	}
 	
@@ -97,53 +115,23 @@ public class Operations
 	{
 		String sql = "insert into " + get_owner() + "的学生" + "values(" + 
 				"\"" + get_student()  + "\"" + "," + get_student_st() + ","
-				+ get_student_ot() + "\"" + get_project()  + "\"" + ");";
+				+ get_student_ot() + "," + "\"" + get_project()  + "\"" + ");";
 		MySQLConnecter newc = new MySQLConnecter();
-		System.out.println(sql);
 		int status = newc.update(sql);
 		if (status == 0)
 			return "FALSE";
-		return "SUCCESS";
-	}
-	
-	public String Judge_Student()
-	{
-		String sql1 = "select * from information where Name=\"" + get_student() + "\"";
-		MySQLConnecter newc = new MySQLConnecter();
-		ArrayList<Map<String, String>> result1 = newc.select(sql1, "information");
 		
-		if (result1.size() == 0) {
-			return "FALSE";
-		}
-		else {
+		String sql1 = "select * from information where Name=\"" + get_student() + "\"";
+		ArrayList<Map<String, String>> result1 = newc.select(sql1, "information");
+		if (result1.size() != 0) {
 			String sql3 = "insert into " + get_student() + "的老师" + "values(" + 
 					"\"" + get_owner()  + "\"" + "," + get_student_st() + ","
 					+ get_student_ot() + "\"" + get_project()  + "\"" + ");";
-			int status = newc.update(sql3);
-			if (status == 0)
+			int number = newc.update(sql3);
+			if (number == 0)
 				return "FALSE";
-			return "SUCCESS";
 		}
-	}
-	
-	public String Judge_Teacher()
-	{
-		String sql2 = "select * from information where Name=\"" + get_teacher() + "\"";
-		MySQLConnecter newc = new MySQLConnecter();
-		ArrayList<Map<String, String>> result2 = newc.select(sql2, "information");
-		
-		if (result2.size() == 0) {
-			return "FALSE";
-		}
-		else {
-			String sql4 = "insert into " + get_teacher() + "的学生" + "values(" + 
-					"\"" + get_owner()  + "\"" + "," + get_teacher_st() + ","
-					+ get_teacher_ot() + "\"" + get_project()  + "\"" + ");";
-			int status = newc.update(sql4);
-			if (status == 0)
-				return"FALSE";
-			return "SUCCESS";
-		}	
+		return "SUCCESS";
 	}
 	
 	public String DeleteStudent()
@@ -153,6 +141,16 @@ public class Operations
 		int status = newc.update(sql);
 		if (status == 0)
 			return "FALSE";
+		
+		String sql1 = "select * from information where Name=\"" + get_student() + "\"";
+		ArrayList<Map<String, String>> result1 = newc.select(sql1, "information");
+		
+		if (result1.size() != 0) {
+			String sql3 = "delete from " + get_student() + "的老师 where teacher = '" + get_owner() + "'";
+			int num = newc.update(sql3);
+			if (num == 0)
+				return "FALSE";
+		}
 		return "SUCCESS";
 	}
 	
@@ -163,43 +161,17 @@ public class Operations
 		int status = newc.update(sql);
 		if (status == 0)
 			return "FALSE";
-		return "SUCCESS";
-	}
-	
-	public String Judge_Delete_Student()
-	{
-		String sql1 = "select * from information where Name=\"" + get_student() + "\"";
-		MySQLConnecter newc = new MySQLConnecter();
-		ArrayList<Map<String, String>> result1 = newc.select(sql1, "information");
 		
-		if (result1.size() == 0) {
-			return "FALSE";
-		}
-		else {
-			String sql3 = "delete from " + get_student() + "的老师 where teacher = '" + get_owner() + "'";
-			int status = newc.update(sql3);
-			if (status == 0)
-				return "FALSE";
-			return "SUCCESS";
-		}
-	}
-	
-	public String Judge_Delete_Teacher()
-	{
 		String sql2 = "select * from information where Name=\"" + get_teacher() + "\"";
-		MySQLConnecter newc = new MySQLConnecter();
 		ArrayList<Map<String, String>> result2 = newc.select(sql2, "information");
 		
-		if (result2.size() == 0) {
-			return "FALSE";
-		}
-		else {
+		if (result2.size() != 0) {
 			String sql4 = "delete from " + get_teacher() + "的学生 where student = '" + get_owner() + "'";
-			int status = newc.update(sql4);
-			if (status == 0)
+			int num = newc.update(sql4);
+			if (num == 0)
 				return"FALSE";
-			return "SUCCESS";
-		}	
+		}
+		return "SUCCESS";
 	}
 	
 	public String SearchInformation()
