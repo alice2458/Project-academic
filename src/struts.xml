@@ -13,7 +13,12 @@
         
      <!-- 成功  -->
         <action name="success" class="com.structs.trio.Assign_in" method="add_information">
-            <result name="SUCCESS">/success.html</result>
+            <result name="SUCCESS">/index.html</result>
+        </action>
+        
+     <!-- 登录  -->
+        <action name="login" class="com.structs.trio.Login_in" method="login">
+            <result name="SUCCESS">/showinfo.jsp</result>
         </action>
      
       
