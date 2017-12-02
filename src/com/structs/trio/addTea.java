@@ -62,7 +62,7 @@ public class addTea
 			String sql4 = "insert into " + get_teacher() + "µÄÑ§Éú" + "values(" + 
 					"\"" + Login_in.name  + "\"" + "," + get_teacher_st() + ","
 					+ get_teacher_ot() + "\"" + get_project()  + "\"" + ");";
-			System.out.println(sql);
+			System.out.println(sql4);
 			int num = newc.update(sql4);
 			if (num == 0)
 				return"FALSE";

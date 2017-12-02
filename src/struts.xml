@@ -18,10 +18,9 @@
         
      <!-- 登录  -->
         <action name="login" class="com.structs.trio.Login_in" method="login">
-            <result name="SUCCESS">/showinfo.jsp</result>
+            <result name="SUCCESS">/try2.html</result>
         </action>
-     
-      
+         
     </package>
 </struts>
 
