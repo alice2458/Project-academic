@@ -8,7 +8,7 @@
     
      <!-- 返回登录界面  -->
         <action name="home" class="com.structs.trio.Jump" method="returnHome">
-            <result name="SUCCESS">/Home.jsp</result>
+            <result name="SUCCESS">/index.html</result>
         </action>
 
 	<!-- 登录  -->
@@ -33,7 +33,7 @@
         </action>
 
 	<!-- 查询成功  -->
-        <action name="find_s" class="com.structs.trio.Operation" method="SearchInformation">
+        <action name="find_s" class="com.structs.trio.Operations" method="SearchInformation">
             <result name="SUCCESS">/showinfo.jsp</result>
         </action>
 
@@ -43,39 +43,21 @@
         </action>
 
 	<!-- 显示个人资料  -->
-        <action name="information" class="com.structs.trio.Operation" method="infor">
-            <result name="SUCCESS">/information.jsp</result>
-        </action>
-        
-    <!-- 增加老师  -->
-        <action name="addt" class="com.structs.trio.Operation" method="AddTeacher">
-            <result name="SUCCESS">/addTeacher.jsp</result>
-        </action>
-        
-    <!-- 增加学生  -->
-        <action name="adds" class="com.structs.trio.Operation" method="AddStudent">
-            <result name="SUCCESS">/addStudent.jsp</result>
+        <action name="information" class="com.structs.trio.Operations" method="infor">
+            <result name="SUCCESS">/Echarts.html</result>
         </action>
     
-    <!-- 删除老师  -->
-        <action name="deletet" class="com.structs.trio.Operation" method="DeleteTeacher">
-            <result name="SUCCESS">/deleteTeacher.jsp</result>
-        </action>
-        
-    <!-- 删除学生  -->
-        <action name="deletes" class="com.structs.trio.Operation" method="DeleteStudent">
-            <result name="SUCCESS">/deleteTeacher.jsp</result>
-        </action>
-        
-    <!-- 修改老师时间  -->
-        <action name="changet" class="com.structs.trio.Operation" method="ChangeTimet">
-            <result name="SUCCESS">/changeTimet.jsp</result>
-        </action>
-        
-    <!-- 修改学生时间  -->
-        <action name="changes" class="com.structs.trio.Operation" method="ChangeTimes">
-            <result name="SUCCESS">/changeTimes.jsp</result>
-        </action>
+    <!-- 增加老师  -->
+        <action name="addts">
+            <result>/addTeacher.jsp</result>
+        </action> 
+    
+    <!-- 增加成功  -->
+        <action name="addt" class="com.structs.trio.addTea" method="AddTeacher">
+            <result name="SUCCESS">/showinfo.jsp</result>
+        </action>	   
+   
+     
 
     </package>
 </struts>
