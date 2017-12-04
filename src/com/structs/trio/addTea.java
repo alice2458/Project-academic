@@ -50,6 +50,7 @@ public class addTea
 				"\"" + get_teacher()  + "\"" + "," + get_teacher_st() + ","
 				+ get_teacher_ot() + "," + "\"" + get_project()  + "\"" + ");";
 		MySQLConnecter newc = new MySQLConnecter();
+		System.out.println(sql);
 		int status = newc.update(sql);
 		if (status == 0)
 			return "FALSE";

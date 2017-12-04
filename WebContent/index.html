@@ -13,158 +13,6 @@
 
 <!-- Style -->
 <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
-<link rel="stylesheet" type="text/css" href="./zeroModal.css" />
-<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
-<!--<script src="./lib/mustache.js"></script>
-<script src="./zeroModal.js"></script>-->
-<script src="./zeroModal.min.js"></script>
-<style type="text/css">
-ol {
-    counter-reset: li;
-    list-style: none;
-    *list-style: decimal;
-    font: 13px 'trebuchet MS', 'lucida sans';
-    padding: 0;
-    margin-bottom: 4em;
-    ext-shadow: 0 1px 0 rgba(255, 255, 255, .5);
-}
-    
-ol ol {
-    margin: 0 0 0 2em;
-}
-    
-.rounded-list a {
-    position: relative;
-    display: block;
-    padding: .4em .4em .4em 2em;
-    *padding: .4em;
-     margin: .8em 0;
-     background: #ddd;
-     color: #444;
-     text-decoration: none;
-     border-radius: .3em;
-     transition: all .3s ease-out;
-}
-    
-.rounded-list a:hover {
-     background: #eee;
-}
-    
-.rounded-list a:hover:before {
-     transform: rotate(360deg);
-}
-    
-.rounded-list a:before {
-        content: counter(li);
-        counter-increment: li;
-        position: absolute;
-        left: -1.3em;
-        top: 50%;
-        margin-top: -1.3em;
-        background: #87ceeb;
-        height: 2em;
-        width: 2em;
-        line-height: 2em;
-        border: .3em solid #fff;
-        text-align: center;
-        font-weight: bold;
-        border-radius: 2em;
-        transition: all .3s ease-out;
-}
-    
-rectangle-list a {
-        position: relative;
-        display: block;
-        padding: .4em .4em .4em .8em;
-        *padding: .4em;
-        margin: .5em 0 .5em 2.5em;
-        background: #ddd;
-        color: #444;
-        text-decoration: none;
-        transition: all .3s ease-out;
-}
-    
-.rectangle-list a:hover {
-        background: #eee;
-}
-    
-.rectangle-list a:before {
-        content: counter(li);
-        counter-increment: li;
-        position: absolute;
-        left: -2.5em;
-        top: 50%;
-        margin-top: -1em;
-        background: #fa8072;
-        height: 2em;
-        width: 2em;
-        line-height: 2em;
-        text-align: center;
-        font-weight: bold;
-}
-    
-.rectangle-list a:after {
-        position: absolute;
-        content: '';
-        border: .5em solid transparent;
-        left: -1em;
-        top: 50%;
-        margin-top: -.5em;
-        transition: all .3s ease-out;
-}
-
-.rectangle-list a:hover:after {
-        left: -.5em;
-        border-left-color: #fa8072;
-    }
-    
-.rectangle-list a {
-        position: relative;
-        display: block;
-        padding: .4em .4em .4em .8em;
-        *padding: .4em;
-        margin: .5em 0 .8em 2.5em;
-        background: #ddd;
-        color: #444;
-        text-decoration: none;
-        transition: all .3s ease-out;
-    }
-    
-.rectangle-list a:hover {
-        background: #eee;
-    }
-    
-.rectangle-list a:before {
-        content: counter(li);
-        counter-increment: li;
-        position: absolute;
-        left: -2.5em;
-        top: 50%;
-        margin-top: -1em;
-        background: #fa8072;
-        height: 2em;
-        width: 2em;
-        line-height: 2em;
-        text-align: center;
-        font-weight: bold;
-    }
-    
-.rectangle-list a:after {
-        position: absolute;
-        content: '';
-        border: .5em solid transparent;
-        left: -1em;
-        top: 50%;
-        margin-top: -.5em;
-        transition: all .3s ease-out;
-    }
-    
-.rectangle-list a:hover:after {
-        left: -.5em;
-        border-left-color: #fa8072;
-    }
-    </style>
-</head>
 </head>
 <!-- //Head -->
 
@@ -174,7 +22,7 @@ rectangle-list a {
 <div class="container w3layouts agileits">
   <div class="login w3layouts agileits">
     <h2>登 录</h2>
-    <form action="login" method="get">
+    <form action="login" method="post">
       <input type="text" Name="name" placeholder="用户名" required="">
       <input type="password" Name="password" placeholder="密码" required="">
       <div class="send-button w3layouts agileits">
@@ -185,7 +33,7 @@ rectangle-list a {
   </div>
   <div class="register w3layouts agileits">
     <h2>注 册</h2>
-    <form action="success" method="get">
+    <form action="assign" method="post">
       <input type="text" Name="name" placeholder="用户名" required="">
       <input type="text" Name="sex" placeholder="性别" required="">
       <input type="text" Name="age" placeholder="年龄" required="">
@@ -196,7 +44,7 @@ rectangle-list a {
       <input type="text" Name="CSDN_add" placeholder="CSDN主页" required="">
       <input type="text" Name="password" placeholder="密码" required="">
       <div class="send-button w3layouts agileits">
-      <input type="submit" value="注册" onclick="_success()">
+      <input type="submit" value="注册">
       </div>
     </form>
     <div class="clear"></div>
@@ -206,66 +54,6 @@ rectangle-list a {
 <div class="footer w3layouts agileits">
   <p>Copyright &copy; More Templates</p>
 </div>
-    <script>
-
-    function _success() {
-        zeroModal.success('操作成功!');
-    }
-
-    function _setOpacity() {
-        zeroModal.show({
-            title: 'hello world',
-            content: 'this is zeroModal',
-            width: '60%',
-            height: '40%',
-            opacity: 0.8
-        });
-    }
-
-    function _drag() {
-        zeroModal.show({
-            title: 'hello world',
-            content: 'this is zeroModal',
-            dragHandle: 'container',
-            ok: true
-        });
-    }
-
-    function _custombutton() {
-        zeroModal.show({
-            title: 'hello world',
-            iframe: true,
-            url: 'http://www.baidu.com',
-            width: '60%',
-            height: '60%',
-            buttons: [{
-                className: 'zeromodal-btn zeromodal-btn-primary',
-                name: '这是自定义按钮',
-                fn: function(opt) {
-                    alert(1);
-                    return false;
-                }
-            }, {
-                className: 'zeromodal-btn zeromodal-btn-default',
-                name: '取消',
-                fn: function(opt) {
-                    alert(2);
-                }
-            }]
-        });
-    }
-
-    function _setPosition() {
-        zeroModal.show({
-            title: 'hello world',
-            content: 'this is zeroModal',
-            top: '30px',
-            left: '30px',
-            width: '280px',
-            height: '600px'
-        });
-    }
-    </script>
 </body>
 <!-- //Body -->
 

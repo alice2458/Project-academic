@@ -11,13 +11,28 @@
             <result name="SUCCESS">/index.html</result>
         </action>
         
-     <!-- 成功  -->
-        <action name="success" class="com.structs.trio.Assign_in" method="add_information">
+     <!-- 返回个人主页  -->
+        <action name="main" class="com.structs.trio.Jump" method="returninfo">
+            <result name="SUCCESS">/try2.html</result>
+        </action>
+        
+     <!-- 注册  -->
+        <action name="assign" class="com.structs.trio.Assign_in" method="add_information">
             <result name="SUCCESS">/index.html</result>
         </action>
         
      <!-- 登录  -->
         <action name="login" class="com.structs.trio.Login_in" method="login">
+            <result name="SUCCESS">/try2.html</result>
+        </action>
+        
+     <!-- 个人详细资料  -->
+        <action name="information" class="com.structs.trio.Information" method="infor">
+            <result name="SUCCESS">/information.jsp</result>
+        </action>
+        
+     <!-- 增加老师  -->
+        <action name="addt" class="com.structs.trio.addTea" method="AddTeacher">
             <result name="SUCCESS">/try2.html</result>
         </action>
          
