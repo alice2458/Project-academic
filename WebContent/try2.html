@@ -28,8 +28,8 @@
 								<div class="content-style-form content-style-form-2">
 									<span class="icon icon-close">Close the dialog</span>
 									<form action="search" method="post">
-										<p><label>姓名</label><input type="text" name="name"/></p>
-										<p><input type="submit" value="确  认" /></p>
+										<label>姓名</label><input type="text" name="name"/>
+										<input type="submit" value="确  认" />
 									</form>
 								</div>
 							</div>
@@ -47,7 +47,7 @@
 										<label>开始时间</label><input name="teacherStartTime" type="text" />
 										<label>结束时间</label><input name="teacherOverTime" type="text" />
 										<label>所授科目</label><input name="project" type="text" />
-										<input type="submit" value="确  认">
+										<p><input type="submit" value="确  认"></p>
 									</form>
 								</div>
 							</div>
@@ -60,13 +60,12 @@
 							<div>
 								<div class="content-style-form content-style-form-2">
 									<span class="icon icon-close">Close the dialog</span>
-									<h2>增加学生</h2>
-									<form action="addt" method="get">
-										<p><label>姓名</label><input type="text" /></p>
-										<p><label>开始时间</label><input type="text" /></p>
-										<p><label>结束时间</label><input type="text" /></p>
-										<p><label>所学科目</label><input type="text" /></p>
-										<p><input type="submit" value="确认" /></p>
+									<form action="adds" method="post">
+										<label>姓名</label><input name="student" type="text" />
+										<label>开始时间</label><input name="studentStartTime" type="text" />
+										<label>结束时间</label><input name="studentOverTime" type="text" />
+										<label>所学科目</label><input name="project" type="text" />
+										<p><input type="submit" value="确  认" /></p>
 									</form>
 								</div>
 							</div>
@@ -79,10 +78,9 @@
 							<div>
 								<div class="content-style-form content-style-form-2">
 									<span class="icon icon-close">Close the dialog</span>
-									<h2>删除老师</h2>
-									<form action="addt" method="get">
-										<p><label>姓名</label><input type="text" /></p>
-										<p><input type="submit" value="确认" /></p>
+									<form action="delt" method="post">
+										<label>姓名</label><input type="text" name="teacher"/>
+										<p><input type="submit" value="确  认" /></p>
 									</form>
 								</div>
 							</div>
@@ -95,28 +93,8 @@
 							<div>
 								<div class="content-style-form content-style-form-2">
 									<span class="icon icon-close">Close the dialog</span>
-									<h2>删除学生</h2>
-									<form action="addt" method="get">
-										<p><label>姓名</label><input type="text" /></p>
-										<p><input type="submit" value="确认" /></p>
-									</form>
-								</div>
-							</div>
-						</div>
-					</div><!-- morph-button -->
-					
-					<div class="morph-button morph-button-modal morph-button-modal-3 morph-button-fixed">
-						<button type="button">修改关系</button>
-						<div class="morph-content">
-							<div>
-								<div class="content-style-form content-style-form-2">
-									<span class="icon icon-close">Close the dialog</span>
-									<h2>修改关系</h2>
-									<form action="addt" method="get">
-										<p><label>姓名</label><input type="text" /></p>
-										<p><label>开始时间</label><input type="text" /></p>
-										<p><label>结束时间</label><input type="text" /></p>
-										<p><label>科目</label><input type="text" /></p>
+									<form action="dels" method="post">
+										<label>姓名</label><input type="text" name="student"/>
 										<p><input type="submit" value="确认" /></p>
 									</form>
 								</div>

@@ -32,7 +32,7 @@
         </action>
         
      <!-- 查找用户  -->
-        <action name="search" class="com.structs.trio.Operations" method="SearchInformation">
+        <action name="search" class="com.structs.trio.Check" method="SearchInformation">
             <result name="SUCCESS">/try2.html</result>
         </action>
         
@@ -41,8 +41,18 @@
             <result name="SUCCESS">/try2.html</result>
         </action>
         
-     <!-- 查找用户  -->
-        <action name="search" class="com.structs.trio.Operations" method="SearchInformation">
+     <!-- 增加学生  -->
+        <action name="adds" class="com.structs.trio.addStu" method="AddStudent">
+            <result name="SUCCESS">/try2.html</result>
+        </action>
+        
+     <!-- 删除老师  -->
+        <action name="delt" class="com.structs.trio.delTea" method="DeleteTeacher">
+            <result name="SUCCESS">/try2.html</result>
+        </action>
+        
+     <!-- 删除学生  -->
+        <action name="dels" class="com.structs.trio.delStu" method="DeleteStudent">
             <result name="SUCCESS">/try2.html</result>
         </action>
          
