@@ -8,62 +8,64 @@ import database.MySQLConnecter;
 public class addTea 
 {
 	private String teacher;
-	private String teacher_start_time;
-	private String teacher_over_time;
+	private String teacherStartTime;
+	private String teacherOverTime;
 	private String project;
+	private ArrayList<String> list = null;
+
+	public ArrayList<String> getList() {
+		return this.list;
+	}
 	
-	public String get_teacher() {
-		return this.teacher;
+	public String getTeacher() {
+		return teacher;
 	}
 
-	public void set_teacher(String teacher) {
+	public void setTeacher(String teacher) {
 		this.teacher = teacher;
 	}
 	
-	public String get_teacher_st() {
-		return this.teacher_start_time;
+	public String getTeacherSt() {
+		return teacherStartTime;
 	}
 
-	public void set_teacher_st(String teacher_start_time) {
-		this.teacher_start_time = teacher_start_time;
+	public void setTeacherSt(String teacherStartTime) {
+		this.teacherStartTime = teacherStartTime;
 	}
 	
-	public String get_teacher_ot() {
-		return this.teacher_over_time;
+	public String getTeacherOt() {
+		return teacherOverTime;
 	}
 
-	public void set_teacher_ot(String teacher_over_time) {
-		this.teacher_over_time = teacher_over_time;
+	public void setTeacherOt(String teacherOverTime) {
+		this.teacherOverTime = teacherOverTime;
 	}
 	
-	public String get_project() {
-		return this.project;
+	public String getProject() {
+		return project;
 	}
 
-	public void set_project(String project) {
+	public void setProject(String project) {
 		this.project = project;
 	}
 	
 	public String AddTeacher() 
 	{
-		String sql = "insert into " + Login_in.name + "的老师 " + "values(" + 
-				"\"" + get_teacher()  + "\"" + "," + get_teacher_st() + ","
-				+ get_teacher_ot() + "," + "\"" + get_project()  + "\"" + ");";
+		String sql = "insert into " + Login_in.name + "的老师" + " values(" + 
+				"\"" + getTeacher()  + "\"" + "," + "\"" + getTeacherSt() + "\"" + ","
+				+ "\"" + getTeacherOt() + "\"" + "," + "\"" + getProject()  + "\"" + ");";
 		MySQLConnecter newc = new MySQLConnecter();
-		System.out.println(sql);
 		int status = newc.update(sql);
 		if (status == 0)
 			return "FALSE";
 		
-		String sql2 = "select * from information where Name=\"" + get_teacher() + "\"";
-		System.out.println(sql2);
+		String sql2 = "select * from information where Name=\"" + getTeacher() + "\"" + ";";
 		ArrayList<Map<String, String>> result2 = newc.select(sql2, "information");
 		
 		if (result2.size() != 0) {
-			String sql4 = "insert into " + get_teacher() + "的学生" + "values(" + 
-					"\"" + Login_in.name  + "\"" + "," + get_teacher_st() + ","
-					+ get_teacher_ot() + "\"" + get_project()  + "\"" + ");";
-			System.out.println(sql4);
+			String sql4 = "insert into " + getTeacher() + "的学生" + " values(" + 
+					"\"" + Login_in.name  + "\"" + "," + "\"" + getTeacherSt() + "\"" + ","
+					+ "\"" + getTeacherOt() + "\"" + "," + "\"" + getProject()  + "\"" + ");";
 			int num = newc.update(sql4);
 			if (num == 0)
 				return"FALSE";

@@ -10,8 +10,8 @@
 		<link rel="stylesheet" type="text/css" href="css/content.css" />
 		<script src="js/modernizr.custom.js"></script>
 	</head>
-	<body>
-		<div class="container">
+	<body style="background: url(images/background.png)">
+		<div>
 			<section>
 				<p>功能选择：</p>
 				<div class="mockup-content">
@@ -27,10 +27,9 @@
 							<div>
 								<div class="content-style-form content-style-form-2">
 									<span class="icon icon-close">Close the dialog</span>
-									<h2>查找用户</h2>
-									<form action="infor" method="get">
-										<p><label>姓名</label><input type="text" /></p>
-										<p><input type="submit" value="确认" /></p>
+									<form action="search" method="post">
+										<p><label>姓名</label><input type="text" name="name"/></p>
+										<p><input type="submit" value="确  认" /></p>
 									</form>
 								</div>
 							</div>
@@ -43,13 +42,12 @@
 							<div>
 								<div class="content-style-form content-style-form-2">
 									<span class="icon icon-close">Close the dialog</span>
-									<h2>增加老师</h2>
-									<form action="addt" method="get">
-										<p><label>姓名</label><input type="text" /></p>
-										<p><label>开始时间</label><input type="text" /></p>
-										<p><label>结束时间</label><input type="text" /></p>
-										<p><label>所授科目</label><input type="text" /></p>
-										<p><input type="submit" value="确认" /></p>
+									<form action="addt" method="post">
+										<label>姓名</label><input name="teacher" type="text" />
+										<label>开始时间</label><input name="teacherStartTime" type="text" />
+										<label>结束时间</label><input name="teacherOverTime" type="text" />
+										<label>所授科目</label><input name="project" type="text" />
+										<input type="submit" value="确  认">
 									</form>
 								</div>
 							</div>
@@ -129,25 +127,7 @@
 				</div><!-- /form-mockup -->
 			</section>
 		</div><!-- /container -->
-		<div class="container">
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-		</div><!-- /container -->
+		
 		<script src="js/classie.js"></script>
 		<script src="js/uiMorphingButton_fixed.js"></script>
 		<script>

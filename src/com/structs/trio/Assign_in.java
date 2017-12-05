@@ -12,10 +12,9 @@ public class Assign_in {
 	private String company;
 	private String CSDN_add;
 	private String password;
-	private String project;
 
 	public String getName() {
-		return this.name;
+		return name;
 	}
 
 	public void setName(String name) {
@@ -23,7 +22,7 @@ public class Assign_in {
 	}
 
 	public String getSex() {
-		return this.sex;
+		return sex;
 	}
 
 	public void setSex(String sex) {
@@ -94,10 +93,10 @@ public class Assign_in {
 				"\"" + "," + "\"" + getPassword() + "\"" + ")";
 		MySQLConnecter mc = new MySQLConnecter();
 		int status = mc.update(sql_info1);
-		String sql_addTeacher = "create table " + getName() + "的老师" + "(teacher varchar(20), teacher_start_time date,"
-				+ "teacher_over_time date, " + "project varchar(20));";
-		String sql_addStudent = "create table " + getName() + "的学生" + "(student varchar(20), student_start_time date,"
-				+ "student_over_time date, " + "project varchar(20));";
+		String sql_addTeacher = "create table " + getName() + "的老师" + "(teacher varchar(20), teacherStartTime varchar(20),"
+				+ "teacherOverTime varchar(20), " + "project varchar(20));";
+		String sql_addStudent = "create table " + getName() + "的学生" + "(student varchar(20), studentStartTime varchar(20),"
+				+ "studentOverTime varchar(20), " + "project varchar(20));";
 		mc.update(sql_addTeacher);
 		mc.update(sql_addStudent);
 		if (status == 0)

@@ -84,32 +84,6 @@ public class Operations
 	public void set_student_ot(String student_over_time) {
 		this.student_over_time = student_over_time;
 	}
-
-	public String AddTeacher() 
-	{
-		String sql = "insert into " + Login_in.name + "的老师 " + "values(" + 
-				"\"" + get_teacher()  + "\"" + "," + get_teacher_st() + ","
-				+ get_teacher_ot() + "," + "\"" + get_project()  + "\"" + ");";
-		MySQLConnecter newc = new MySQLConnecter();
-		int status = newc.update(sql);
-		if (status == 0)
-			return "FALSE";
-		
-		String sql2 = "select * from information where Name=\"" + get_teacher() + "\"";
-		System.out.println(sql2);
-		ArrayList<Map<String, String>> result2 = newc.select(sql2, "information");
-		
-		if (result2.size() != 0) {
-			String sql4 = "insert into " + get_teacher() + "的学生" + "values(" + 
-					"\"" + get_owner()  + "\"" + "," + get_teacher_st() + ","
-					+ get_teacher_ot() + "\"" + get_project()  + "\"" + ");";
-			System.out.println(sql);
-			int num = newc.update(sql4);
-			if (num == 0)
-				return"FALSE";
-		}
-		return "SUCCESS";
-	}
 	
 	public String AddStudent() 
 	{

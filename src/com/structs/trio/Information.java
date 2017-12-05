@@ -25,10 +25,8 @@ public class Information
 		HttpServletRequest req = (HttpServletRequest) request;
 		HttpSession session = req.getSession();
 		String sql1 = "select * from information where Name=\"" + Login_in.name + "\"" + ";";
-		System.out.println(sql1);
 		MySQLConnecter mc = new MySQLConnecter();
 		ArrayList<Map<String, String>> result1 = mc.select(sql1, "information");
-		System.out.println(result1);
 		session.setAttribute("inforlist", result1);
 		return "SUCCESS";
 	}

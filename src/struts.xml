@@ -31,8 +31,18 @@
             <result name="SUCCESS">/information.jsp</result>
         </action>
         
+     <!-- 查找用户  -->
+        <action name="search" class="com.structs.trio.Operations" method="SearchInformation">
+            <result name="SUCCESS">/try2.html</result>
+        </action>
+        
      <!-- 增加老师  -->
         <action name="addt" class="com.structs.trio.addTea" method="AddTeacher">
+            <result name="SUCCESS">/try2.html</result>
+        </action>
+        
+     <!-- 查找用户  -->
+        <action name="search" class="com.structs.trio.Operations" method="SearchInformation">
             <result name="SUCCESS">/try2.html</result>
         </action>
          

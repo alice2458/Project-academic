@@ -10,40 +10,130 @@
 <body style="background: url(images/background.png)">
 <body>
 	<h1>个人基本信息</h1>
-	<table width="80%" border="1" align="center">
-		<tr bgcolor="#949494">
-			<th>姓名</th>
-			<th>性别</th>
-			<th>年龄</th>
-			<th>电话号码</th>
-			<th>电子邮箱</th>
-			<th>毕业院校</th>
-			<th>工作单位</th>
-			<th>CSDN主页</th>
+	<br>
+	<br>
+	<div class="b">
+	<table width="100%" style="border:1px;" align="center" cellspacing="1" cellpadding="1">
+		<tr>
+			<th style="color:#FFFFFF;" height="50px"><font size=6>姓名</font></th>
 		</tr>
-		<%
-			ArrayList<Map<String, String>> list2 = (ArrayList<Map<String, String>>) session.getAttribute("inforlist");
-			if (list2.size() > 0) {
-				out.print("<tr align=\"center\"><td>" + list2.get(0).get("name") + "</td>\n");
-				out.print("<td>" + list2.get(0).get("sex") + "</td>\n");
-				out.print("<td>" + list2.get(0).get("age") + "</td>\n");
-				out.print("<td>" + list2.get(0).get("phone") + "</td>\n");
-				out.print("<td>" + list2.get(0).get("email") + "</td>\n");
-				out.print("<td>" + list2.get(0).get("graduated_school") + "</td>\n");
-				out.print("<td>" + list2.get(0).get("company") + "</td>\n");
-				out.print("<td>" + list2.get(0).get("CSDN_add") + "</td></tr>\n");
-
-			} else {
-				out.print("<tr><td>" + "false" + "</td></tr>\n");
+		<tr>
+			<th style="color:#FFFFFF;" height="50px"><font size=6>性别</font></th>
+		</tr>
+		<tr>
+			<th style="color:#FFFFFF;" height="50px"><font size=6>年龄</font></th>
+		</tr>
+		<tr>
+			<th style="color:#FFFFFF;" height="50px"><font size=6>电话号码</font></th>
+		</tr>
+		<tr>
+			<th style="color:#FFFFFF;" height="50px"><font size=6>电子邮箱</font></th>
+		</tr>
+		<tr>
+			<th style="color:#FFFFFF;" height="50px"><font size=6>毕业院校</font></th>
+		</tr>
+		<tr>
+			<th style="color:#FFFFFF;" height="50px"><font size=6>工作单位</font></th>
+		</tr>
+		<tr>
+			<th style="color:#FFFFFF;" height="50px"><font size=6>CSDN主页</font></th>
+		</tr>
+	</table>
+	</table>
+	</div>
+	<div class="a">
+	<table width="500px" style="border:1px;" align="center" cellspacing="1" cellpadding="1">
+		<tr>
+			<%
+			ArrayList<Map<String, String>> list11 = (ArrayList<Map<String, String>>) session.getAttribute("inforlist");
+			if (list11.size() > 0) {
+				out.print("<th style=\"color:#FFFFFF;\" height=\"50px\">" + "<font size=6>" + list11.get(0).get("name")+ "</font>" + "</th>");
+			}else {
+				out.print("<th>" + "false" + "</th>");
 			}
-		%>
+			%>
+		</tr>
+		<tr>
+			<%
+			ArrayList<Map<String, String>> list12 = (ArrayList<Map<String, String>>) session.getAttribute("inforlist");
+			if (list12.size() > 0) {
+				out.print("<th style=\"color:#FFFFFF;\" height=\"50px\"><font size=6>" + list12.get(0).get("sex")+ "</font></th>");
+			}else {
+				out.print("<th>false</th>");
+			}
+			%>
+		</tr>
+		<tr>
+			<%
+			ArrayList<Map<String, String>> list13 = (ArrayList<Map<String, String>>) session.getAttribute("inforlist");
+			if (list13.size() > 0) {
+				out.print("<th style=\"color:#FFFFFF;\" height=\"50px\"><font size=6>" + list13.get(0).get("age")+ "</font></th>");
+			}else {
+				out.print("<th>false</th>");
+			}
+			%>
+		</tr>
+		<tr>
+			<%
+			ArrayList<Map<String, String>> list14 = (ArrayList<Map<String, String>>) session.getAttribute("inforlist");
+			if (list14.size() > 0) {
+				out.print("<th style=\"color:#FFFFFF;\" height=\"50px\"><font size=6>" + list14.get(0).get("phone")+ "</font></th>");
+			}else {
+				out.print("<th>false</th>");
+			}
+			%>
+		</tr>
+		<tr>
+			<%
+			ArrayList<Map<String, String>> list15 = (ArrayList<Map<String, String>>) session.getAttribute("inforlist");
+			if (list15.size() > 0) {
+				out.print("<th style=\"color:#FFFFFF;\" height=\"50px\"><font size=6>" + list15.get(0).get("email")+ "</font></th>");
+			}else {
+				out.print("<th>false</th>");
+			}
+			%>
+		</tr>
+		<tr>
+			<%
+			ArrayList<Map<String, String>> list16 = (ArrayList<Map<String, String>>) session.getAttribute("inforlist");
+			if (list16.size() > 0) {
+				out.print("<th style=\"color:#FFFFFF;\" height=\"50px\"><font size=6>" + list16.get(0).get("graduated_school")+ "</font></th>");
+			}else {
+				out.print("<th>false</th>");
+			}
+			%>
+		</tr>
+		<tr>
+			<%
+			ArrayList<Map<String, String>> list17 = (ArrayList<Map<String, String>>) session.getAttribute("inforlist");
+			if (list17.size() > 0) {
+				out.print("<th style=\"color:#FFFFFF;\" height=\"50px\"><font size=6>" + list17.get(0).get("company")+ "</font></th>");
+			}else {
+				out.print("<th>false</th>");
+			}
+			%>
+		</tr>
+		<tr>
+			<%
+			ArrayList<Map<String, String>> list18 = (ArrayList<Map<String, String>>) session.getAttribute("inforlist");
+			if (list18.size() > 0) {
+				out.print("<th style=\"color:#FFFFFF;\" height=\"50px\"><font size=6>" + list18.get(0).get("CSDN_add")+ "</font></th>");
+			}else {
+				out.print("<th>false</th>");
+			}
+			%>
+		</tr>
 	</table>
 	</table>
-    <div class="register w3layouts agileits">
-      <div class="send-button w3layouts agileits">
-      	<input type="submit" value="注册">
+	</div>
+    <div>
+    <form action="main" method="post">
+      <div class="register w3layouts agileits send-button w3layouts agileits c">
+      	<input type="submit" value="返回个人主页">
       </div>
-    </div>
+    </form>
+    <div class="clear"></div>
+  </div>
 </body>
 </body>
 </html>

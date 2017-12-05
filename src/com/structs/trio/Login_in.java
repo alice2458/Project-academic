@@ -33,7 +33,6 @@ public class Login_in
 	public String login() {
 		String sql1 = "select * from information where Name=\"" + getName() + "\"";
 		MySQLConnecter mc = new MySQLConnecter();
-		System.out.println(sql1);
 		ArrayList<Map<String, String>> result1 = mc.select(sql1, "information");
 		if (result1.size() == 0) {
 			return "FALSE";
