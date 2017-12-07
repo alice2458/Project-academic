@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ECharts 实现人民的名义关系图谱</title>
+    <script src="jquery-3.2.1.min.js"></script>
+    <script src="echarts.min.js"></script>
+    <style type="text/css">
+        html, body, #main { height: 100%; width: 100%; margin: 0; padding: 0 }
+    </style>
+</head>
+<body>
+    <div id="main" style=""></div>
+    <script type="text/javascript">
+        var myChart = echarts.init(document.getElementById('main'));
+        myChart.setOption({
+            title: { text: '个人主页' },
+            tooltip: {
+                formatter: function (x) {
+                    return x.data.des;
+                }
+            },
+            series: [
+                {
+                    type: 'graph',
+                    layout: 'force',
+                    symbolSize: 80,
+                    roam: true,
+                    edgeSymbol: ['circle', 'arrow'],
+                    edgeSymbolSize: [4, 10],
+                    edgeLabel: {
+                        normal: {
+                            textStyle: {
+                                fontSize: 20
+                            }
+                        }
+                    },
+                    force: {
+                        repulsion: 2500,
+                        edgeLength: [10, 50]
+                    },
+                    draggable: true,
+                    itemStyle: {
+                        normal: {
+                            color: '#4b565b'
+                        }
+                    },
+                    lineStyle: {
+                        normal: {
+                            width: 2,
+                            color: '#4b565b'
+
+                        }
+                    },
+                    edgeLabel: {
+                        normal: {
+                            show: true,
+                            formatter: function (x) {
+                                return x.data.name;
+                            }
+                        }
+                    },
+                    label: {
+                        normal: {
+                            show: true,
+                            textStyle: {
+                            }
+                        }
+                    },
+                    data: [
+                        {
+                            name: '侯亮平',
+                            des: '最高检反贪局侦查处处长，汉东省人民检察院副检察长兼反贪局局长。<br/>经过与腐败违法分子的斗争，最终将一批腐败分子送上了审判台，<br/>正义战胜邪恶，自己也迎来了成长。',
+                            symbolSize: 100,
+                            itemStyle: {
+                                normal: {
+                                    color: 'red'
+                                }
+                            }
+                        }, {
+                            name: '祁同伟',
+                            des: '汉东省公安厅厅长',
+                            symbolSize: 100
+                        }
+                    ],
+                    links: [
+                        {
+                            source: '祁同伟',
+                            target: '侯亮平',
+                            name: "师哥"
+                        }, {
+                            source: '高小琴',
+                            target: '高小凤',
+                            name: "双胞胎",
+                            symbolSize: '1'
+                        }, {
+                            source: '蔡成功',
+                            target: '欧阳菁',
+                            name: "举报",
+                            lineStyle: {
+                                normal: {
+                                    type: 'dotted',
+                                    color: '#000'
+                                }
+                            }
+                        }, {
+                            source: '刘新建',
+                            target: '赵瑞龙',
+                            name: "举报",
+                            lineStyle: {
+                                normal: {
+                                    type: 'dotted',
+                                    color: '#000'
+                                }
+                            }
+                        }]
+                }
+            ]
+        });
+        
+        myChart.showLoading();   //数据加载完之前先显示一段简单的loading动画
+        
+        var names = [];
+        var dess = [];
+        
+        $.ajax({
+        	type:"post",
+        	async:true,    //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
+        	url:"TestServlet", //请求发送到Servlet处
+        	data:{},
+        	dataType:"json", //返回数据形式为json
+        	success:function(result){
+        		//请求成功时执行该函数内容，result即为服务器返回的json对象
+        		if(result){
+        			for(var i=0;i<result)
+        		}
+        	}
+        })
+        
+    </script>
+</body>
+</html>
