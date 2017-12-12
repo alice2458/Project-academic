@@ -1,11 +1,20 @@
 package com.structs.trio;
 
+import java.util.ArrayList;
+import java.util.Map;
+
+import javax.servlet.ServletRequest;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+import org.apache.struts2.ServletActionContext;
+
 import database.*;
 
 public class Assign_in {
 	private String name;
 	private String sex;
-	private int age;
+	private String birthday;
 	private String phone;
 	private String email;
 	private String graduated_school;
@@ -27,14 +36,6 @@ public class Assign_in {
 
 	public void setSex(String sex) {
 		this.sex = sex;
-	}
-
-	public int getAge() {
-		return age;
-	}
-
-	public void setAge(int age) {
-		this.age = age;
 	}
 
 	public String getPhone() {
@@ -88,10 +89,23 @@ public class Assign_in {
 	
 	public String add_information() 
 	{
-		String sql_info1 = "insert into information values(" + "\"" + getName()  + "\"" + "," + "\"" + getSex() + "\"" + "," + getAge() + ","
+		ServletRequest request = ServletActionContext.getRequest();
+		HttpServletRequest req = (HttpServletRequest) request;
+		HttpSession session = req.getSession();
+		birthday = request.getParameter("birthday");
+		
+		String sql1 = "select * from information where Name=\"" + getName() + "\"";
+		MySQLConnecter mc = new MySQLConnecter();
+		ArrayList<Map<String, String>> result1 = mc.select(sql1, "information");
+		if (result1.size() != 0) 
+		{
+			String s1 = "delete from information where name=" + "\"" + getName()  + "\"" + ";";
+			mc.update(s1);
+		}
+		
+		String sql_info1 = "insert into information values(" + "\"" + getName()  + "\"" + "," + "\"" + getSex() + "\"" + "," + "\"" + birthday + "\"" + ","
 				+ "\"" + getPhone() + "\"" + "," + "\"" + getEmail()  + "\"" + "," + "\"" + getGraduated_school() + "\"" + "," + "\"" + getCompany()  + "\"" + "," + "\"" + getCSDN_add() +
 				"\"" + "," + "\"" + getPassword() + "\"" + ")";
-		MySQLConnecter mc = new MySQLConnecter();
 		int status = mc.update(sql_info1);
 		String sql_addTeacher = "create table " + getName() + "µƒ¿œ ¶" + "(teacher varchar(20), teacherStartTime varchar(20),"
 				+ "teacherOverTime varchar(20), " + "project varchar(20));";

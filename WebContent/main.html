@@ -11,6 +11,12 @@
 		<script src="js/modernizr.custom.js"></script>
 	</head>
 	<body style="background: url(images/background.png)">
+	    <div class="mockup-content">
+	    	<br>
+	    	<br>
+	    	<font size=7>个人主页</font>
+	    </div>
+	    
 		<div>
 			<section>
 				<p>功能选择：</p>
@@ -21,6 +27,16 @@
 						
 					</div><!-- morph-button -->
 					
+					<div class="morph-button morph-button-modal morph-button-modal-2 morph-button-fixed bu">
+						<a href=tables><button type="button">师承关系</button></a>
+						
+					</div><!-- morph-button -->
+					
+					<div class="morph-button morph-button-modal morph-button-modal-2 morph-button-fixed bu">
+						<a href=tree><button type="button">师承树</button></a>
+						
+					</div><!-- morph-button -->
+					
 					<div class="morph-button morph-button-modal morph-button-modal-3 morph-button-fixed">
 						<button type="button">查找用户</button>
 						<div class="morph-content">
@@ -28,8 +44,13 @@
 								<div class="content-style-form content-style-form-2">
 									<span class="icon icon-close">Close the dialog</span>
 									<form action="search" method="post">
-										<label>姓名</label><input type="text" name="name"/>
-										<input type="submit" value="确  认" />
+										<div>
+											<label>姓名</label><input type="text" name="findname"/>
+										</div>
+										<br>
+										<div class="bo">
+											<input type="submit" value="确  认" />
+										</div>
 									</form>
 								</div>
 							</div>
@@ -43,11 +64,16 @@
 								<div class="content-style-form content-style-form-2">
 									<span class="icon icon-close">Close the dialog</span>
 									<form action="addt" method="post">
-										<label>姓名</label><input name="teacher" type="text" />
-										<label>开始时间</label><input name="teacherStartTime" type="text" />
-										<label>结束时间</label><input name="teacherOverTime" type="text" />
-										<label>所授科目</label><input name="project" type="text" />
-										<p><input type="submit" value="确  认"></p>
+										<div>
+											<label>姓名</label><input name="teacher" type="text" />
+											<label>开始时间</label><input name="teacherStartTime" type="text" />
+											<label>结束时间</label><input name="teacherOverTime" type="text" />
+											<label>所授科目</label><input name="project" type="text" />
+										</div>
+										<br>
+										<div class="bo">
+											<p><input type="submit" value="确  认"></p>
+										</div>
 									</form>
 								</div>
 							</div>
@@ -61,11 +87,16 @@
 								<div class="content-style-form content-style-form-2">
 									<span class="icon icon-close">Close the dialog</span>
 									<form action="adds" method="post">
+									<div>
 										<label>姓名</label><input name="student" type="text" />
 										<label>开始时间</label><input name="studentStartTime" type="text" />
 										<label>结束时间</label><input name="studentOverTime" type="text" />
 										<label>所学科目</label><input name="project" type="text" />
+									</div>
+									<br>
+									<div class="bo">
 										<p><input type="submit" value="确  认" /></p>
+									</div>	
 									</form>
 								</div>
 							</div>
@@ -79,8 +110,14 @@
 								<div class="content-style-form content-style-form-2">
 									<span class="icon icon-close">Close the dialog</span>
 									<form action="delt" method="post">
-										<label>姓名</label><input type="text" name="teacher"/>
-										<p><input type="submit" value="确  认" /></p>
+										<div>
+											<label>姓名</label><input type="text" name="teacher"/>
+										</div>
+										<br>
+										<div class="bo">
+											<p><input type="submit" value="确  认" /></p>
+										</div>
+										
 									</form>
 								</div>
 							</div>
@@ -94,8 +131,14 @@
 								<div class="content-style-form content-style-form-2">
 									<span class="icon icon-close">Close the dialog</span>
 									<form action="dels" method="post">
+									<div>
 										<label>姓名</label><input type="text" name="student"/>
+									</div>
+									<br>
+									<div class="bo">
 										<p><input type="submit" value="确认" /></p>
+									</div>
+										
 									</form>
 								</div>
 							</div>

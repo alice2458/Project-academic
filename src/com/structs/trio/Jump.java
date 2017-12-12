@@ -9,4 +9,8 @@ public class Jump
 	public String returninfo() {
 		return "SUCCESS";
 	}
+	
+	public String returninfoOther() {
+		return "SUCCESS";
+	}
 }

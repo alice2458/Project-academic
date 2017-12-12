@@ -48,6 +48,30 @@
 	left: 460px
 }
 
+.d1
+{
+	position:relative;
+}
+
+.d2
+{
+	position:relative;
+	padding-bottom:10px;
+	padding-left:350px
+}
+
+.d3
+{
+	position:relative;
+}
+
+.d4
+{
+	position:relative;
+	padding-top:10px;
+	padding-left:350px
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     text-align: center;

@@ -11,7 +11,7 @@ import org.apache.struts2.ServletActionContext;
 
 import database.MySQLConnecter;
 
-public class addTea 
+public class addTeaOther
 {
 	private String teacher;
 	private String teacherStartTime;
@@ -28,16 +28,16 @@ public class addTea
 		teacherOverTime = request.getParameter("teacherOverTime");
 		project = request.getParameter("project");
 		
-		String sql0 = "select * from " + Login_in.name + "的老师" + " where teacher=" + "\"" + teacher + "\"" + ";";
+		String sql0 = "select * from " + find.findname + "的老师" + " where teacher=" + "\"" + teacher + "\"" + ";";
 		MySQLConnecter mc = new MySQLConnecter();
-		ArrayList<Map<String, String>> result0 = mc.select(sql0, Login_in.name+"的老师");
+		ArrayList<Map<String, String>> result0 = mc.select(sql0, find.findname+"的老师");
 		if (result0.size() != 0) 
 		{
-			String s1 = "delete from " + Login_in.name + "的老师" + " where teacher=" + "\"" + teacher + "\"" + ";";
+			String s1 = "delete from " + find.findname + "的老师" + " where teacher=" + "\"" + teacher + "\"" + ";";
 			mc.update(s1);
 		}
 		
-		String sql = "insert into " + Login_in.name + "的老师" + " values(" + 
+		String sql = "insert into " + find.findname + "的老师" + " values(" + 
 				"\"" + teacher  + "\"" + "," + "\"" + teacherStartTime + "\"" + ","
 				+ "\"" + teacherOverTime + "\"" + "," + "\"" + project  + "\"" + ");";
 		MySQLConnecter newc = new MySQLConnecter();
@@ -48,7 +48,7 @@ public class addTea
 		
 		if (result2.size() != 0) {
 			String sql4 = "insert into " + teacher + "的学生" + " values(" + 
-					"\"" + Login_in.name  + "\"" + "," + "\"" + teacherStartTime + "\"" + ","
+					"\"" + find.findname  + "\"" + "," + "\"" + teacherStartTime + "\"" + ","
 					+ "\"" + teacherOverTime + "\"" + "," + "\"" + project  + "\"" + ");";
 			newc.update(sql4);
 		}

@@ -11,7 +11,7 @@ import org.apache.struts2.ServletActionContext;
 
 import database.MySQLConnecter;
 
-public class addStu
+public class addStuOther
 {
 	private String student;
 	private String studentStartTime;
@@ -27,32 +27,29 @@ public class addStu
 		studentStartTime = request.getParameter("studentStartTime");
 		studentOverTime = request.getParameter("studentOverTime");
 		project = request.getParameter("project");
-		
-		String sql0 = "select * from " + Login_in.name + " where student=" + "\"" + student + "\"" + ";";
+
+		String sql0 = "select * from " + find.findname + " where student=" + "\"" + student + "\"" + ";";
 		MySQLConnecter mc = new MySQLConnecter();
-		ArrayList<Map<String, String>> result0 = mc.select(sql0, Login_in.name+"的学生");
+		ArrayList<Map<String, String>> result0 = mc.select(sql0, find.findname+"的学生");
 		if (result0.size() != 0) 
 		{
-			String s1 = "delete from " + Login_in.name + " where student=" + "\"" + student + "\"" + ";";
+			String s1 = "delete from " + find.findname + " where student=" + "\"" + student + "\"" + ";";
 			mc.update(s1);
 		}
-
-		String sql = "insert into " + Login_in.name + "的学生" + " values(" + 
+		
+		String sql = "insert into " + find.findname + "的学生" + " values(" + 
 				"\"" + student  + "\"" + "," + "\"" + studentStartTime  + "\"" + ","
 				+ "\"" + studentOverTime  + "\"" + "," + "\"" + project  + "\"" + ");";
 		MySQLConnecter newc = new MySQLConnecter();
-		int status = newc.update(sql);
-		if (status == 0)
-			return "FALSE";
+		newc.update(sql);
 		
 		String sql1 = "select * from information where Name=\"" + student + "\"" + ";";
 		ArrayList<Map<String, String>> result1 = newc.select(sql1, "information");
-		if (result1.size() != 0) 
-		{
+		if (result1.size() != 0) {
 			String sql3 = "insert into " + student + "的老师" + " values(" + 
-					"\"" + Login_in.name  + "\"" + "," + "\"" + studentStartTime  + "\"" + ","
+					"\"" + find.findname  + "\"" + "," + "\"" + studentStartTime  + "\"" + ","
 					+ "\"" + studentOverTime  + "\"" + "\"" + project  + "\"" + ");";
-			int number = newc.update(sql3);
+			newc.update(sql3);
 		}
 		return "SUCCESS";
 	}
